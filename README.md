@@ -33,6 +33,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 ## Credits
 
 Country drop down list from https://stackoverflow.com/questions/53388003/select-country-dropdown-in-html-pa by Szymon Zachariasz
+
 State drop down list from https://www.freeformatter.com/usa-state-list-html-select.html
 
 ## License
