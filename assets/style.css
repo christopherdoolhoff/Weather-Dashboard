@@ -1,0 +1,14 @@
+header{
+    text-align: center;
+}
+#sidebar {
+    height: 100%;
+    width: 100%;
+    background-color: #E7E9EB;
+}
+
+#pastsearch{
+    overflow-y: scroll;
+    overflow-x: hidden; 
+    padding-top: 20px;
+}
