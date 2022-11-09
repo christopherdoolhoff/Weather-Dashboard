@@ -15,7 +15,7 @@ var repoSearchTerm = document.querySelector('#five-day');
 
 var getCityWeather = function () {
     if(countryInput == 0 && stateInput == 0){
-    var apiUrl = baseURL + cityInput + '&appid=' + APIKey;
+    var apiUrl = baseURL + cityInput + '&units=imperial&appid=' + APIKey;
     console.log(apiUrl); 
     fetch(apiUrl)
     .then(function (response) {
@@ -33,7 +33,7 @@ var getCityWeather = function () {
       alert('Unable to connect');
     });
     } else if(stateInput == 0){
-    var apiUrl = baseURL + cityInput + ',' + countryInput + '&appid=' + APIKey;
+    var apiUrl = baseURL + cityInput + ',' + countryInput + '&units=imperial&appid=' + APIKey;
     console.log(apiUrl);
     fetch(apiUrl)
     .then(function (response) {
@@ -51,7 +51,7 @@ var getCityWeather = function () {
       alert('Unable to connect');
     });
     } else{
-    var apiUrl = baseURL + cityInput + ',' + stateInput + ',' + countryInput + '&appid=' + APIKey;
+    var apiUrl = baseURL + cityInput + ',' + stateInput + ',' + countryInput + '&units=imperial&appid=' + APIKey;
     console.log(apiUrl);
     fetch(apiUrl)
     .then(function (response) {
@@ -97,14 +97,14 @@ $("#country").change(function(){
 
 var displayRepos = function (repos, searchTerm) {
     if (repos.length === 0) {
-      repoContainerEl.textContent = 'No repositories found.';
+      cityWeatherEl.textContent = 'No repositories found.';
       return;
     }
   
     cityWeatherEl.textContent = searchTerm;
   
     for (var i = 0; i < repos.length; i++) {
-      var repoName = repos[i].owner.login + '/' + repos[i].name;
+      var repoName = repos[i].weather + '/' + repos[i].name;
   
       var repoEl = document.createElement('a');
       repoEl.classList = 'list-item flex-row justify-space-between align-center';
@@ -127,6 +127,6 @@ var displayRepos = function (repos, searchTerm) {
   
       repoEl.appendChild(statusEl);
   
-      repoContainerEl.appendChild(repoEl);
+      cityWeatherEl.appendChild(repoEl);
     }
   };
