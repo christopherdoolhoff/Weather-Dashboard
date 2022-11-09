@@ -17,7 +17,7 @@
       <h1 class="app-title">Weather Dashboard</h1>
       <p>See the weather outlook for multiple cities.</p>
     </header>
-    <div id="sidebar" class="card" style="width: 18rem">
+    <div id="sidebar" class="col-12 col-sm-4 card" style="width: 18rem">
       <div class="card" style="width: 18rem">
         <div class="card-body">
           <h5 class="card-title">Search for a City:</h5>
@@ -366,12 +366,12 @@
       </div>
     </div>
 
-    <div class="col-12 col-md-8">
-        <h2 class="subtitle">Showing Repositories for: <span id="city-weather"></span></h2>
+    <div id="city-weather-div" class="col-12 col-sm-8">
+        <h2 class="subtitle">Weather Today: <div id="city-weather"></div></h2>
         <div id="repos-container" class="list-group"></div>
 
-    <div class="col-12 col-md-8">
-        <h2 class="subtitle">Showing Repositories for: <span id="five-day"></span></h2>
+    <div id="five-day-div" class="col-12 col-md-8">
+        <h2 class="subtitle">Five Day Forecast: <div id="five-day"></div></h2>
         <div id="repos-container" class="list-group"></div>
 
     <script

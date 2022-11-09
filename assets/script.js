@@ -23,7 +23,7 @@ var getCityWeather = function () {
         console.log(response);
         response.json().then(function (data) {
           console.log(data);
-          displayRepos(data, state);
+          weatherToday(data, city);
         });
       } else {
         alert('Error: ' + response.statusText);
@@ -41,7 +41,7 @@ var getCityWeather = function () {
         console.log(response);
         response.json().then(function (data) {
           console.log(data);
-          displayRepos(data, state);
+          weatherToday(data, city);
         });
       } else {
         alert('Error: ' + response.statusText);
@@ -59,7 +59,7 @@ var getCityWeather = function () {
         console.log(response);
         response.json().then(function (data) {
           console.log(data);
-          displayRepos(data, state);
+          weatherToday(data, city);
         });
       } else {
         alert('Error: ' + response.statusText);
@@ -95,38 +95,46 @@ $("#country").change(function(){
 }
 );
 
-var displayRepos = function (repos, searchTerm) {
-    if (repos.length === 0) {
-      cityWeatherEl.textContent = 'No repositories found.';
-      return;
-    }
+var weatherToday = function (data, city){
+    console.log(data);
+    console.log(city);
+    document.querySelector("#city-weather-div").style.display = "block";
+
+    cityWeatherEl.innerHTML = "City: " + data.name + "<br>Temp: " + data.main.temp + "<br>Temp High: " + data.main.temp_max + "<br>Temp Low: " + data.main.temp_min + "<br>Wind Speed: " + data.wind.speed
+}
+
+// var displayRepos = function (repos, searchTerm) {
+//     if (repos.length === 0) {
+//       cityWeatherEl.textContent = 'No repositories found.';
+//       return;
+//     }
   
-    cityWeatherEl.textContent = searchTerm;
+//     cityWeatherEl.textContent = searchTerm;
   
-    for (var i = 0; i < repos.length; i++) {
-      var repoName = repos[i].weather + '/' + repos[i].name;
+//     for (var i = 0; i < repos.length; i++) {
+//       var repoName = repos[i].weather + '/' + repos[i].name;
   
-      var repoEl = document.createElement('a');
-      repoEl.classList = 'list-item flex-row justify-space-between align-center';
-      repoEl.setAttribute('href', './single-repo.html?repo=' + repoName);
+//       var repoEl = document.createElement('a');
+//       repoEl.classList = 'list-item flex-row justify-space-between align-center';
+//       repoEl.setAttribute('href', './single-repo.html?repo=' + repoName);
   
-      var titleEl = document.createElement('span');
-      titleEl.textContent = repoName;
+//       var titleEl = document.createElement('span');
+//       titleEl.textContent = repoName;
   
-      repoEl.appendChild(titleEl);
+//       repoEl.appendChild(titleEl);
   
-      var statusEl = document.createElement('span');
-      statusEl.classList = 'flex-row align-center';
+//       var statusEl = document.createElement('span');
+//       statusEl.classList = 'flex-row align-center';
   
-      if (repos[i].open_issues_count > 0) {
-        statusEl.innerHTML =
-          "<i class='fas fa-times status-icon icon-danger'></i>" + repos[i].open_issues_count + ' issue(s)';
-      } else {
-        statusEl.innerHTML = "<i class='fas fa-check-square status-icon icon-success'></i>";
-      }
+//       if (repos[i].open_issues_count > 0) {
+//         statusEl.innerHTML =
+//           "<i class='fas fa-times status-icon icon-danger'></i>" + repos[i].open_issues_count + ' issue(s)';
+//       } else {
+//         statusEl.innerHTML = "<i class='fas fa-check-square status-icon icon-success'></i>";
+//       }
   
-      repoEl.appendChild(statusEl);
+//       repoEl.appendChild(statusEl);
   
-      cityWeatherEl.appendChild(repoEl);
-    }
-  };
+//       cityWeatherEl.appendChild(repoEl);
+//     }
+//   };

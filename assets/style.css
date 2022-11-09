@@ -12,6 +12,6 @@ header{
     overflow-x: hidden; 
     padding-top: 20px;
 }
-#state{
+#state, #city-weather-div, #five-day-div{
     display: none;
 }
