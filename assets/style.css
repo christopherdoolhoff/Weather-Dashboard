@@ -15,3 +15,8 @@ header{
 #state, #city-weather-div, #five-day-div{
     display: none;
 }
+#city-weather-div{
+    background-color: aqua;
+    border: 5px;
+    border-color: black;
+}
