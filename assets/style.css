@@ -17,6 +17,9 @@ header{
 }
 #city-weather-div{
     background-color: aqua;
-    border: 5px;
+    border: white 1px solid;
     border-color: black;
+}
+.weather-results{
+    border: black 1px solid;
 }
