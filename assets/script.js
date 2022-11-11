@@ -113,6 +113,9 @@ $("#country").change(function(){
     console.log(cityInput);
     console.log(countryInput);
     console.log(stateInput);
+    localStorage.setItem(
+        "searched-" + document.querySelector('#city').value,document.querySelector('#city').value
+    )
     getCityWeather();
 }
 );
@@ -136,3 +139,21 @@ var weatherForecast = function (data){
     fiveDayEl.appendChild(repoEl);
     }
 };
+
+for (var i = 0; i < localStorage.length; i++) {
+    var key = localStorage.key(i);
+    var value = localStorage.getItem(key);
+    console.log('Key: ' + key + ', Value: ' + value);
+    var searchHistoryEl = document.createElement('li');
+    searchHistoryEl.textContent = value
+    searchHistoryEl.classList = 'list-group-item';
+    document.querySelector('#pastsearch').append(searchHistoryEl);
+    searchHistoryEl.classList = 'list-group-item';
+  };
+
+  $(".list-group-item").click(function (event) {
+    cityInput = event.target.textContent
+      console.log(event.target.textContent)
+      getCityWeather();
+   } );
+
