@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Title -->
     <title>Weather Dashboard</title>
+    <!-- links to bootstrap CSS, and local css -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,10 +15,12 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
+    <!-- jumbotron -->
     <header class="jumbotron shadow-sm p-3 mb-5 rounded bg-primary">
       <h1 class="app-title">Weather Dashboard</h1>
       <p>See the weather outlook for multiple cities.</p>
     </header>
+    <!-- Sidebar with search box -->
     <div id="sidebar" class="col-12 col-sm-4 card" style="width: 18rem">
       <div class="card" style="width: 18rem">
         <div class="card-body">
@@ -29,6 +33,7 @@
             aria-label=".form-control-lg example"
           />
           <br />
+          <!-- Country drop down -->
           <select name="country" class="form-control" id="country">
             <option value="0" label="Select a country ... " selected="selected">Select a country ... </option>
             <option value="US" label="United States">United States</option>
@@ -296,6 +301,7 @@
             </optgroup>
         </select>
         <br>
+        <!-- State drop down -->
         <select name="state" class="form-control" id="state">
                 <option value="0" label="Select a state ... " selected="selected">Select a state ... </option>
             <option value="AL">Alabama</option>
@@ -351,12 +357,14 @@
             <option value="WY">Wyoming</option>
         </select>
           <br>
+          <!-- search button -->
           <div class="d-grid gap-2">
             <button id = "searchBtn" class="btn btn-primary" type="button">Search</button>
           </div>
         </div>
       </div>
       <div>
+        <!-- search history -->
         <ul class="list-group list-group-flush">
           Search History
           <div id="pastsearch">
@@ -364,15 +372,15 @@
         </ul>
       </div>
     </div>
-
+<!-- today's weather section -->
     <div id="city-weather-div" class="col-12 col-sm-3 weather-results">
         <h2>Weather Today</h2><h5 id="today"></h5> <div id="city-weather"></div>
         <div id="repos-container" class="list-group"></div>
-
+<!-- forecast weather section -->
     <div id="five-day-div" class="col-12 col-md-12">
         <h2>Five Day Forecast: </h2><div id="five-day"></div>
         <div id="repos-container" class="list-group"></div>
-
+<!-- links to bootstrap js, jquery js, moment js, and local js -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
